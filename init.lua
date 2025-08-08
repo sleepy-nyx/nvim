@@ -17,6 +17,11 @@ vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"+d<CR>') --this and above line to copy/cut to system clipboard
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)     --format according to lsp
 
+vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
+vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
+vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
+vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
+
 vim.pack.add({
   { src = "https://github.com/vague2k/vague.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
@@ -46,7 +51,7 @@ vim.keymap.set('n', '<leader>h', ':Pick help<CR>')
 vim.keymap.set('n', '<leader>e', ':Oil<CR>')
 
 require "mini.pick".setup()
-vim.lsp.enable({ "lua_ls", "tinymist" })
+vim.lsp.enable({ "lua_ls", "tinymist", "html", "cssls" })
 
 require('comfy-line-numbers').setup({
   labels = {
