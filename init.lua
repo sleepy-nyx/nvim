@@ -22,12 +22,15 @@ vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
 vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 vim.pack.add({
   { src = "https://github.com/vague2k/vague.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/chomosuke/typst-preview.nvim" },
   { src = "https://github.com/mluders/comfy-line-numbers.nvim" },
   { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/andweeb/presence.nvim" },
   -- { src = "https://github.com/nvim-lua/plenary.nvim" },
   -- { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2", }
 })
@@ -51,7 +54,7 @@ vim.keymap.set('n', '<leader>h', ':Pick help<CR>')
 vim.keymap.set('n', '<leader>e', ':Oil<CR>')
 
 require "mini.pick".setup()
-vim.lsp.enable({ "lua_ls", "tinymist", "html", "cssls" })
+vim.lsp.enable({ "lua_ls", "tinymist", "html", "cssls", "rust-analyzer" })
 
 require('comfy-line-numbers').setup({
   labels = {
@@ -81,7 +84,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 vim.cmd("set completeopt+=noselect")
-
 
 
 --   _______  __  ____   _______
