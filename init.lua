@@ -24,6 +24,10 @@ vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', 'G', 'G0')
+vim.keymap.set('n', 'o', 'o<Esc>')
+vim.keymap.set('n', 'O', 'O<Esc>')
+
 vim.pack.add({
   { src = "https://github.com/vague2k/vague.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
