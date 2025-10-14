@@ -13,8 +13,14 @@ vim.o.wrap = false
 vim.o.scrolloff = 10
 vim.g.mapleader = " "
 
+-- COLEMAK
+vim.keymap.set('n', 'n', '<Left>')
+vim.keymap.set('n', 'e', '<Down>')
+vim.keymap.set('n', 'i', '<Up>')
+vim.keymap.set('n', 'o', '<Right>')
+
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"_y')
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"_d<CR>') --this and above line to copy/cut to system clipboard
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"_d<CR>') --this and above line to delete/cut to null register
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)     --format according to lsp
 
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
