@@ -18,6 +18,11 @@ vim.keymap.set('n', 'n', '<Left>')
 vim.keymap.set('n', 'e', '<Down>')
 vim.keymap.set('n', 'i', '<Up>')
 vim.keymap.set('n', 'o', '<Right>')
+vim.keymap.set('n', 'l', '<Insert>')
+
+vim.keymap.set('n', 'h', 'o')
+vim.keymap.set('n', 'H', 'O')
+
 
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"_y')
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"_d<CR>') --this and above line to delete/cut to null register
