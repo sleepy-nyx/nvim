@@ -80,8 +80,8 @@ require('comfy-line-numbers').setup({
     '232', '233', '234', '235', '241', '242', '243', '244', '245', '251',
     '252', '253', '254', '255',
   },
-  up_key = 'k',
-  down_key = 'j',
+  up_key = 'i',
+  down_key = 'e',
 })
 
 vim.cmd("colorscheme vague")
