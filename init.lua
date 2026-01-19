@@ -14,14 +14,14 @@ vim.o.scrolloff = 10
 vim.g.mapleader = " "
 
 -- COLEMAK
-vim.keymap.set('n', 'n', '<Left>')
-vim.keymap.set('n', 'e', '<Down>')
-vim.keymap.set('n', 'i', '<Up>')
-vim.keymap.set('n', 'o', '<Right>')
-vim.keymap.set('n', 'l', '<Insert>')
+--vim.keymap.set('n', 'k', '<Left>')
+--vim.keymap.set('n', 'l', '<Down>')
+--vim.keymap.set('n', ';', '<Up>')
+--vim.keymap.set('n', '\'', '<Right>')
+--vim.keymap.set('n', 'l', '<Insert>')
 
-vim.keymap.set('n', 'h', 'o')
-vim.keymap.set('n', 'H', 'O')
+--vim.keymap.set('n', 'h', 'o')
+--vim.keymap.set('n', 'H', 'O')
 
 
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"_y')
