@@ -23,9 +23,8 @@ vim.g.mapleader = " "
 --vim.keymap.set('n', 'h', 'o')
 --vim.keymap.set('n', 'H', 'O')
 
-
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"_y')
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', '"_d<CR>') --this and above line to delete/cut to null register
+vim.keymap.set({ 'n', 'v', 'x' }, 'd', '"_d') --this line to cut to null register (aka delete)
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>d', 'd') --this line to actually cut
 vim.keymap.set('n', '<leader>lf', vim.lsp.buf.format)     --format according to lsp
 
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
