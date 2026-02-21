@@ -35,6 +35,7 @@ vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', 'G', 'G0')
+vim.keymap.set('n', 'gg', 'gg0')
 
 vim.pack.add({
   { src = "https://github.com/vague2k/vague.nvim" },
@@ -67,22 +68,41 @@ vim.keymap.set('n', '<leader>h', ':Pick help<CR>')
 vim.keymap.set('n', '<leader>e', ':Oil<CR>')
 
 require "mini.pick".setup()
-vim.lsp.enable({ "lua_ls", "tinymist", "html", "cssls", "rust-analyzer" })
+vim.lsp.enable({ "lua_ls", "html", "cssls", })
 
---require('comfy-line-numbers').setup({
---  labels = {
---    '1', '2', '3', '4', '5', '11', '12', '13', '14', '15', '21', '22', '23',
---    '24', '25', '31', '32', '33', '34', '35', '41', '42', '43', '44', '45',
---    '51', '52', '53', '54', '55', '111', '112', '113', '114', '115', '121',
---    '122', '123', '124', '125', '131', '132', '133', '134', '135', '141',
---    '142', '143', '144', '145', '151', '152', '153', '154', '155', '211',
---    '212', '213', '214', '215', '221', '222', '223', '224', '225', '231',
---    '232', '233', '234', '235', '241', '242', '243', '244', '245', '251',
---    '252', '253', '254', '255',
---  },
---  up_key = 'k',
---  down_key = 'j',
+vim.lsp.config('*', {
+  root_markers = { '.git' },
+})
+
+--vim.lsp.config('cssls', { 
+--  cmd = { "vscode-css-languageserver", "--stdio" },
+--  filetypes = { "css", "scss", "less" },
+--  root_dir = function(fname)
+--    return root_pattern(fname) or vim.loop.os_homedir()
+--  end,
+--  settings = {
+--    css = {
+--      validate = true
+--    },
+--    less = {
+--      validate = true
+--    },
+--    scss = {
+--      validate = true
+--    },
+--  }
 --})
+
+-- vim.api.nvim_create_autocmd("Filetype", {
+-- 	pattern = { "html", "shtml", "htm" },
+-- 	callback = function()
+-- 		vim.lsp.start({
+-- 			name = "superhtml",
+-- 			cmd = { "superhtml", "lsp" },
+-- 			root_dir = vim.fs.dirname(vim.fs.find({".git"}, { upward = true })[1])
+-- 		})
+-- 	end
+-- })
 
 vim.cmd("colorscheme vague")
 -- vim.o.autocomplete = true
